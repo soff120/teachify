@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+
+<head>
+    {% load static %}
+    {% include 'assets.html' %}
+</head>
+
+
+<body class="nk-body bg-white npc-default has-aside ">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap ">
+                {% include 'header.html' %}
+                <div class="nk-content ">
+                    <div class="container wide-xl">
+                        <div class="nk-content-inner">
+                            {% include 'menu.html' %}
+                            <div class="nk-content-body">
+                                <div class="nk-content-wrap">
+                                    <div class="nk-block-head nk-block-head-sm">
+                                        <div class="nk-block-between">
+                                            <div class="nk-block-head-content">
+                                                <h3 class="nk-block-title page-title">{{ Title }}</h3>
+                                                <div class="nk-block-des text-soft">
+                                                    <p>{{ SubTitle }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nk-block">
+                                        <div class="row g-gs">
+                                            <div class="col-sm-6">
+                                                <div class="card card-bordered">
+                                                    <div class="card-inner">
+                                                        <div class="card-title-group align-start mb-2">
+                                                            <div class="card-title">
+                                                                <h6 class="title">Define Your Class</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row" >
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <input placeholder="Name Class" type="text" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12 mt-2">
+                                                                <div class="form-group">
+                                                                    <button class="btn btn-info"><i class="fas fa-camera mr-2"></i> Webcam</button>
+                                                                    <button class="btn btn-info"><i class="fas fa-upload mr-2"></i> Upload Image</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% include 'footer.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+</body>
+
+</html>

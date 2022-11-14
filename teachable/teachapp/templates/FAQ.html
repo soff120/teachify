@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+<head>
+    {% load static %}
+    {% include 'assets.html' %}
+</head>
+
+<body class="nk-body bg-white npc-default has-aside ">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap ">
+                {% include 'header.html' %}
+                <div class="nk-content">
+                    <div class="container wide-xl">
+                        <div class="nk-content-inner">
+                            {% include 'menu.html' %}
+                            <div class="nk-content-body">
+                                <div class="panel-group" id="accordion">
+        <h2><div class="faqHeader">Frequently Asked Questions</div></h2>
+        <br>
+        <br>
+         <h3><div class="faqHeader">Basics</div></h3>
+         <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false">What is Teachify?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                <h5><div class="panel-body">
+                    Teachify is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone.
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false">Who’s it for?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                    Educators, artists, students, innovators, makers of all kinds – really, anyone who has an idea they want to explore. No prerequisite machine learning knowledge required.
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false">How does it work?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                    You train a computer to recognize your images without writing any machine learning code. Then, use your model in your own projects, sites, apps, and more.
+
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h3><div class="faqHeader">Getting started</div></h3>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true">How do I start?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in" aria-expanded="true" style="">
+                <h5><div class="panel-body">
+                    Make an account and log in, then click on Teachify menu and get started.
+                </div></h5>
+            </div>
+        </div>
+        <br>
+      
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false">What kinds of stuff can I train it with?</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                   You can currently train Teachify with images of common objects (pulled from your webcam or image files). More types of training may be coming soon :)
+                    <br>
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false">I trained a model… what now?</a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                    You can export your model to use it in projects! your model will be saved in Your machine menu, you can go back to it whenever you want so that you can export it and reuse it anytime.
+                </div></h5>
+            </div>
+        </div>
+        
+    </div>
+                    
+                                {% include 'footer.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% include 'login.html' %}
+
+        <div class="modal fade modal-webcam" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Record Your Data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="video-container text-center" style="background-image: url(https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-webcam-icon-design-template-vector-isolated-png-image_779652.jpg);
+                        background-size: cover;
+                        background-repeat: no-repeat;">
+                            <div class="col-md-12">
+                                <div class="alert alert-info mb-3">
+                                    Record Times <span class="timer">20</span> Seconds
+                                </div>
+                            </div>
+                            <video id="webcam-container" width="100%" height="480" autoplay></video>
+                            <div class="col-md-12 w-100 text-center" style="margin-top: -20px;">
+                                <button class="record-btn btn btn-success">Record</button>
+                                <button class="stop-btn btn btn-danger">Stop</button>
+                            </div>
+                            <canvas id="canvas-capturer" hidden width="80" height="60"></canvas>
+                        </div>
+                        <div class="result-container row p-3" style="height: 480px; overflow-y: scroll;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade modal-upload" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload Your Data</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label for="upload-file" class="alert alert-info w-100 text-center mb-0"
+                                    style="cursor:pointer">Choose File</label>
+                                <input type="file" multiple id="upload-file" hidden accept="image/*">
+                            </div>
+                            <button class="btn btn-info m-3 btn-block" id="save-upload-btn">SAVE</button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row" id="preview-temp-upload">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="{% static 'assets/js/scripts.js' %}"></script>
+
+    <script>
+        //initiate variable
+        $(".stop-btn").hide();
+        $(".result-container").hide();
+        $(".result-preview").hide();
+        $("#save-upload-btn").hide();
+        var webcam = document.getElementById('webcam-container');
+        window.stream = "";
+        window.snappedimage = {};
+        window.listclass = {
+            1: "#class-1",
+            2: "#class-2"
+        }
+        window.activeclass = "";
+        window.timefps = 40; //25fps
+        window.limitfps = 20000;
+        window.isrecord = false;
+        window.capturer = document.getElementById('canvas-capturer');
+        window.snapping = null; //for setinterval snapping image webcam
+
+
+        //turn on webcam
+        function turnonwebcam() {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                    video: true
+                }).then(function (stream) {
+                    webcam.srcObject = stream;
+                    window.stream = stream;
+                    webcam.play();
+                });
+            } else if (navigator.getUserMedia) { // Standard
+                navigator.getUserMedia({
+                    video: true
+                }, function (stream) {
+                    webcam.src = stream;
+                    window.stream = stream;
+                    webcam.play();
+                }, errBack);
+            } else if (navigator.webkitGetUserMedia) { // WebKit-prefixed
+                navigator.webkitGetUserMedia({
+                    video: true
+                }, function (stream) {
+                    webcam.src = window.webkitURL.createObjectURL(stream);
+                    window.stream = stream;
+                    webcam.play();
+                }, errBack);
+            } else if (navigator.mozGetUserMedia) { // Mozilla-prefixed
+                navigator.mozGetUserMedia({
+                    video: true
+                }, function (stream) {
+                    webcam.srcObject = stream;
+                    window.stream = stream;
+                    webcam.play();
+                }, errBack);
+            } else {
+                Swal.fire("error", "Doesnt Support Webcam", "error")
+            }
+        }
+
+
+        //turn of webcam
+        function turnoffwebcam() {
+            webcam.pause();
+            webcam.src = "";
+            window.stream.getTracks()[0].stop();
+            console.log("Vid off");
+        }
+
+        //open modal webcam
+        function openmodalrecord(e) {
+            if ($("#class-1-input-name").val() == "") {
+                Swal.fire("warning", "Insert Class Name", "warning");
+                return;
+            }
+            if (window.isrecord == false) {
+                $(".timer").text((window.limitfps / 1000).toFixed(0));
+            }
+            $('.modal-webcam').modal('show');
+            turnonwebcam();
+            window.activeclass = $(e).attr("data-class")
+        }
+
+        // on modal close
+        $('.modal-webcam').on('hidden.bs.modal', function () {
+            turnoffwebcam()
+            if (window.isrecord == true) {
+                window.isrecord = false
+                clearInterval(snapping)
+                renderimagepreview();
+            }
+            $(".result-container").html('');
+            $(".result-container").hide();
+            $(".video-container").show();
+            $('.record-btn').show();
+            $(".stop-btn").hide();
+        })
+
+        // snap image
+        function snap() {
+            var context = capturer.getContext('2d');
+            context.drawImage(webcam, 0, 0, 80, 60);
+            snappedimage[activeclass].push(capturer.toDataURL())
+        }
+
+        // render image preview
+        function renderimagepreview() {
+            blockUI()
+            turnoffwebcam();
+            $(".result-container").append(
+                '<div class="col-md-12 mb-2"><button class="btn btn-info" onclick="rerecording()">Record Again ? </button></div>'
+            )
+            $(activeclass + "-result-preview").html(
+                "<button onclick='deletedataset(this)' data-class='" + activeclass +
+                "' class='btn btn-block btn-danger mb-2'>Delete</button>"
+            );
+            $(".result-container").show();
+            $(".video-container").hide();
+            $(activeclass + "-input-button").hide();
+            $(activeclass + "-result-preview").show();
+
+            snappedimage[activeclass].forEach(element => {
+                $(".result-container").append(
+                    '<div class="col-3 p-1"><img src="' + element + '" style="width:100%"></div>'
+                )
+                $(activeclass + "-result-preview").append(
+                    '<div class="col-3 p-1"><img src="' + element + '" style="width:100%"></div>'
+                )
+            });
+            $.unblockUI();
+        }
+
+        //start recording
+        function rerecording() {
+            snappedimage[activeclass] = [];
+            $(".result-container").html('');
+            $(".result-container").hide();
+            $(activeclass + "-result-preview").html('');
+            $(".video-container").show();
+            $('.record-btn').show();
+            $(".stop-btn").hide();
+            turnonwebcam();
+        }
+
+        // record btn
+        $('.record-btn').click(function () {
+            $(".stop-btn").show();
+            $(this).hide();
+            window.isrecord = true;
+            //snap image
+            $(".timer").text((window.limitfps / 1000).toString())
+            var timeleft = window.limitfps
+            snappedimage[activeclass] = []
+            window.snapping = setInterval(function () {
+                snap();
+                timeleft -= window.timefps
+                $(".timer").text((timeleft / 1000).toFixed(2))
+                if (timeleft <= 0) {
+                    window.isrecord = false;
+                    clearInterval(snapping)
+                    renderimagepreview();
+                }
+            }, window.timefps);
+        })
+
+
+        // stop btn
+        $('.stop-btn').click(function () {
+            $(".record-btn").show();
+            $(this).hide();
+            window.isrecord = false;
+            clearInterval(snapping)
+            renderimagepreview();
+        })
+
+        //delete dataset
+        function deletedataset(e) {
+
+            var Class = $(e).attr("data-class");
+            $(Class + "-result-preview").html("");
+            $(Class + "-input-button").show();
+            $(Class + "-result-preview").hide();
+            delete snappedimage[Class];
+        }
+
+        // modal open upload
+        function openmodalupload(e) {
+            if ($("#class-1-input-name").val() == "") {
+                Swal.fire("warning", "Insert Class Name", "warning");
+                return;
+            }
+            $('.modal-upload').modal('show');
+            window.activeclass = $(e).attr("data-class")
+        }
+
+        function resizeImage(base64Str, maxWidth = 400, maxHeight = 350) {
+            return new Promise((resolve) => {
+                let img = new Image()
+                img.src = base64Str
+                img.onload = () => {
+                    let canvas = document.createElement('canvas')
+                    const MAX_WIDTH = maxWidth
+                    const MAX_HEIGHT = maxHeight
+                    let width = img.width
+                    let height = img.height
+
+                    if (width > height) {
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width
+                            width = MAX_WIDTH
+                        }
+                    } else {
+                        if (height > MAX_HEIGHT) {
+                            width *= MAX_HEIGHT / height
+                            height = MAX_HEIGHT
+                        }
+                    }
+                    canvas.width = width
+                    canvas.height = height
+                    let ctx = canvas.getContext('2d')
+                    ctx.drawImage(img, 0, 0, width, height)
+                    resolve(canvas.toDataURL())
+                }
+            })
+        }
+
+        //on after choose file
+        $("#upload-file").change(function () {
+            var input = this;
+            if (input.files && input.files[0]) {
+                var reader;
+                input.files.forEach(element => {
+                    reader = new FileReader();
+                    reader.onload = function (e) {
+                        resizeImage(e.target.result, 160, 120).then((result) => {
+                            $("#preview-temp-upload").append(
+                                '<div class="col-3 p-1"><img src="' + result +
+                                '" class="w-100"/></div>'
+                            )
+                        });
+                    }
+                    reader.readAsDataURL(element);
+                });
+            }
+            // show up save button
+            if ($(this).val() != "") {
+                $("#save-upload-btn").show();
+            }
+            $(this).val("");
+        })
+
+        //save temporal upload file
+        function savetempupload() {
+            $("#save-upload-btn").hide();
+            if ($("#preview-temp-upload").find("img").length != 0) {
+                console.log($("#preview-temp-upload").find("img").length);
+                $("#preview-temp-upload").find("img").each(function () {
+                    if (snappedimage[activeclass] == null) {
+                        snappedimage[activeclass] = []
+                    }
+                    snappedimage[activeclass].push($(this).attr("src"))
+                })
+                renderimageonupload();
+            }
+        }
+
+        //render preiview
+        function renderimageonupload() {
+            $("#preview-temp-upload").html('')
+            $(activeclass + "-result-preview").html(
+                "<button onclick='deletedataset(this)' data-class='" + activeclass +
+                "' class='btn btn-block btn-danger mb-2'>Delete</button>"
+            );
+            $("#preview-temp-upload").show();
+            $(activeclass + "-input-button").hide();
+            $(activeclass + "-result-preview").show();
+            snappedimage[activeclass].forEach(element => {
+                $(activeclass + "-result-preview").append(
+                    '<div class="col-3 p-1"><img src="' + element + '" style="width:100%"></div>'
+                )
+            });
+        }
+
+        $('.modal-upload').on('hidden.bs.modal', function () {
+            savetempupload();
+        })
+
+        $("#save-upload-btn").click(function () {
+            savetempupload();
+            $('.modal-upload').modal('hide');
+        })
+
+        $("#dotraining-form").submit(function (e) {
+            e.preventDefault();
+            var data = {}
+            console.log(snappedimage);
+            if ($.isEmptyObject(snappedimage)) {
+                Swal.fire("error", "Add Dataset first", "error");
+                return;
+            }
+            if (Object.keys(snappedimage).length < 2) {
+                Swal.fire("error", "Add Dataset first", "error");
+                return;
+            }
+
+            Object.keys(snappedimage).forEach(element => {
+                if ($(element + "-input-name").val() == "") {
+                    Swal.fire("error", "Set class name data", "error");
+                    return;
+                }
+                if (snappedimage[element].length == 0) {
+                    Swal.fire("error", "Add Dataset first", "error");
+                    return;
+                }
+                var classname = $(element + "-input-name").val();
+                classname = classname.replace(" ", "-")
+                data[classname] = snappedimage[element];
+            })
+
+            if (Object.keys(data).length < 2){
+                Swal.fire("error", "Class name can't be same", "error")
+                return
+            }
+
+            console.log(data);
+            data = JSON.stringify(data)
+            var formdata = new FormData(this)
+            formdata.append("data", data)
+            $.ajax({
+                url: $(this).attr("action"),
+                method: "POST",
+                data: formdata,
+                processData: false,
+                contentType: false,
+                beforeSend: function (xhr, settings) {
+                    blockLogkUI();
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                }
+            }).done(function (data) {
+                console.log(data);
+                if (data.status == 200) {
+                    $.unblockUI();
+                    Swal.fire("success", "Training Success, we will redirecting to your machine", "success")
+                    location.href = "testing/"+data.MachineID
+                } else {
+                    $.unblockUI();
+                    Swal.fire("error", "Training Failed :(", "error")
+                }
+            }).fail(function(data){
+                $.unblockUI();
+                Swal.fire("error", "Server Error :(", "error")
+            })
+        })
+    </script>
+
+    <!-- try websocket -->
+    <script>
+        var socket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/teaching/'
+            + '{{ RoomCode }}'
+            + '/'
+        )
+
+        socket.onmessage = function(e) {
+            console.log(e);
+            const data = JSON.parse(e.data);
+            console.log(data);
+            var spinner = '<i class="fas fa-spinner fa-spin mr-2"></i>'
+            $("#log-place").html(spinner+data.message)
+        };
+
+        socket.onclose = function (e) {
+            Swal.fire("warning", "WebSocket is close, we will refresh your page", "warning")
+            //location.reload()
+        }
+
+        //new script for add class
+        function renderInputForm(className){
+            var strhtml = '<div class="card card-bordered card-class" id="'+className+'">'+
+                '<div class="card-inner">'+
+                    '<div class="row">'+
+                        '<span class="close delete-class" data-target="'+className+'" onclick="deleteclass(this)"><i class="fa fa-times"></i></span>'+
+                        '<div class="col-md-12">'+
+                            '<div class="form-group">'+
+                                '<input placeholder="Name Class" type="text"'+
+                                    'class="form-control input-class-name"'+
+                                    'id="'+className+'-input-name" value="'+className+'">'+
+                            '</div>'+
+                        '</div>' +
+                        '<div class="col-md-12 mt-2">' + 
+                            '<div class="form-group" id="'+className+'-input-button">' +
+                                '<button class="btn btn-info input-webcam"' +
+                                    'onclick="openmodalrecord(this)"' +
+                                    'data-input-name="#'+className+'-input-name" '+
+                                    'data-class="#'+className+'"><i' +
+                                        'class="fas fa-camera mr-2"></i>' + 
+                                    'Webcam</button> ' + 
+                                '<button class="btn btn-info input-upload"' +
+                                    'onclick="openmodalupload(this)"' +
+                                    'data-input-name="#'+className+'-input-name"' +
+                                    'data-class="#'+className+'"><i' +
+                                        'class="fas fa-upload mr-2"></i>' + 
+                                    'Upload Image</button>' +
+                            '</div>' +
+                            '<div class="row p-3 result-preview preview-on-input"' +
+                                'id="'+className+'-result-preview">' +
+                            '</div>' + 
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+            return strhtml
+        }
+
+        function addclass(){
+            var listObj = Object.keys(listclass)
+            var lastClass = parseInt(listObj[listObj.length - 1]) + 1
+            window.listclass[lastClass] = "#class-"+lastClass
+            var classForHtml = ("#class-"+lastClass).replace("#", "")
+            newHtml = renderInputForm(classForHtml)
+            $(".class-container").append(newHtml)
+        }
+
+        function deleteclass(e){
+            var classTarget = "#"+$(e).attr("data-target")
+            var idClassTarget = $(e).attr("data-target").replace("class-", "")
+            delete window.listclass[idClassTarget]
+            $(classTarget).remove()
+        }
+        
+    </script>
+
+</body>
+
+</html>

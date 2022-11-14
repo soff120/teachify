@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+<head>
+    {% load static %}
+    {% include 'assets.html' %}
+</head>
+
+<body class="nk-body bg-white npc-default has-aside ">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap ">
+                {% include 'header.html' %}
+                <div class="nk-content">
+                    <div class="container wide-xl">
+                        <div class="nk-content-inner">
+                            {% include 'menu.html' %}
+                            <div class="nk-content-body">
+                                           <div class="panel-group" id="accordion">
+        <h2><div class="faqHeader">Frequently Asked Questions</div></h2>
+        <br>
+        <br>
+         <h3><div class="faqHeader">Basics</div></h3>
+         <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false">What is Teachify?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                <h5><div class="panel-body">
+                    Teachify is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone.
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false">Who’s it for?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                    Educators, artists, students, innovators, makers of all kinds – really, anyone who has an idea they want to explore. No prerequisite machine learning knowledge required.
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false">How does it work?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                    You train a computer to recognize your images without writing any machine learning code. Then, use your model in your own projects, sites, apps, and more.
+
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h3><div class="faqHeader">Getting started</div></h3>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true">How do I start?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse in" aria-expanded="true" style="">
+                <h5><div class="panel-body">
+                    Make an account and log in, then click on Teachify menu and get started.
+                </div></h5>
+            </div>
+        </div>
+        <br>
+      
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false">What kinds of stuff can I train it with?</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                   You can currently train Teachify with images of common objects (pulled from your webcam or image files). More types of training may be coming soon :)
+                    <br>
+                </div></h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false">I trained a model… what now?</a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse" aria-expanded="false">
+                <h5><div class="panel-body">
+                    You can export your model to use it in projects! your model will be saved in Your machine menu, you can go back to it whenever you want so that you can export it and reuse it anytime.
+                </div></h5>
+            </div>
+        </div>
+        
+    </div>
+                    
+                                {% include 'footer.html' %}
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% include 'login.html' %}
+
+
+    </div>
+
+</body>
+
+</html>

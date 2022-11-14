@@ -1,0 +1,150 @@
+Step 1 : 
+setup virtualenv
+
+step 2 :
+install dependcie/ library
+- django #web framework
+- djongo #untuk database mongodb
+- keras
+- numpy
+- channels #untuk web socket
+- cahnnels-redis #ini untuk koneksi ke port redis
+
+#gak wajib
+step 3 :
+start project django : 
+create project
+- django-admin startproject teachable
+create app
+- masuk kedalam folder teachable
+- python manage.py startapp teachapp
+
+#gak wajib
+step 4 :
+setting django : 
+file setting.py : apps, templates, Database, static_url, DATA_UPLOAD_MAX_MEMORY_SIZE
+
+#gak wajib
+step 5 :
+#create models
+- masuk ke folder teachable / teachapp / models.py
+- migration : 
+commands : /teachable
+ - python manage.py makemigrations
+ - python manage.py migrate
+
+
+
+#workflow training
+- Server running
+- Browser capture image - webcam
+fungsi yang handle image webcam pada index.html
+- turnonwebcam
+- turnoffwebcam
+- snap
+#conversi image menjadi dataurl ada pada fungsi snap
+#semua image dataurl dirubah menjadi json array pada fungsi 
+# $("#dotraining-form").submit
+
+setelah dilakukan submit image beserta settingnya (epoch, batch, dll)
+# image disimpan pada server menggunakan konversi dataurl menjadi image dengan bantuan urlib
+proces diatas berada pada fungsi starttrain yang ada pada file /teachapp/views.py
+
+#semua data setup training disimpan pada database yang sesuai dengan models Machine (model database)
+
+#dilakukan proses training dengan menginisiasi class CNN dengan parameter w, h image ditambah dengan object machine yang berasal dari
+penyimpanan image dan setup database tadi
+
+#pada saat fitting model diattach keras callback sebagai alat bantu pemberian log pesan sampai manakan training dilakukan
+
+#saat training selesai semua model akan disimpan menjadi model satitc atau file dengan extension h5. (file cnn.py fungsi saving model)
+
+#proses selesai dan page diredirect menuju halaman testing sesuai dengan model yang dibuat sebelumnya
+
+
+#pada proses testing dilakukan hal yang sama dalam capture image seperti training. perbedaannya ada pada pengiriman data yang ada pada fungsi 
+ $(".start-test-btn").click pada file testing.html
+yangmana image hasil convert menjadi dataurl dikirim kepada server melalui web socket
+
+sever akan melakukan predict dan dikembalikan juga pada client browser melalui web socket yang mana semua dihandle pada file consumer.py bila pada server dan pada testing.html dihandle pada fungsi  socket.onmessage
+
+#tugas done
+
+
+---------------------------------------------------------------------------------------------
+
+Étape 1:
+configuration de virtualenv
+
+étape 2:
+installer dependcie / library
+- Cadre django #web
+- djongo # pour la base de données mongodb
+- difficile
+- engourdi
+- canaux # pour le socket Web
+- cahnnels-redis #ini pour la connexion au port redis
+
+# non requis
+étape 3:
+démarrez le projet django:
+créer un projet
+- django-admin startproject enseignable
+créer une application
+- entrez dans le dossier enseignable
+- python manage.py startapp teachapp
+
+# non requis
+étape 4:
+Paramètres de django:
+file setting.py: applications, modèles, base de données, static_url, DATA_UPLOAD_MAX_MEMORY_SIZE
+
+# non requis
+étape 5:
+#create models
+- allez dans le dossier teachable / teachapp / models.py
+- migration:
+commandes: / enseignable
+ - python manage.py makemigrations
+ - python manage.py migrer
+
+
+
+# workflow formation
+- Serveur en cours d'exécution
+- Navigateur de capture d'image - webcam
+une fonction qui gère l'image de la webcam dans index.html
+- turnonwebcam
+- turnoffwebcam
+- se casser
+#conversion de l'image en dataurl est en fonction snap
+# toutes les images dataurl sont converties en tableau json en fonction
+# $ ("# dotraining-form"). soumettre
+
+après avoir soumis l'image et ses paramètres (époque, lot, etc.)
+# l'image est stockée sur le serveur en utilisant la conversion dataurl en image à l'aide d'urlib
+le processus ci-dessus est dans la fonction starttrain dans le fichier /teachapp/views.py
+
+# Toutes les données de configuration de la formation sont stockées dans une base de données conforme aux modèles de machine (base de données de modèles)
+
+# Le processus d'apprentissage est réalisé en initialisant la classe CNN avec les paramètres w, h image plus l'objet machine qui provient de
+stockage d'images et configuration de la base de données plus tôt
+
+# Lorsque le modèle d'appareillage est attaché en dur, le callback est un outil pour fournir des messages de journal jusqu'à ce que la formation soit effectuée
+
+# Lorsque la formation est terminée, tous les modèles seront enregistrés en tant que modèles satitc ou fichiers avec l'extension h5. (fonction cnn.py du modèle d'enregistrement de fichier)
+
+#process est terminé et la page est redirigée vers la page de test selon le modèle précédemment créé
+
+
+#Dans le processus de test, la même chose est faite pour la capture d'image que la formation. la différence réside dans l'envoi de données qui sont dans la fonction
+ $ (". start-test-btn"). Cliquez sur le fichier testing.html
+qui est l'endroit où l'image convertie en dataurl est envoyée au serveur via une socket Web
+
+Le serveur le prédira et le retournera au navigateur client via une socket Web où tout est géré dans le fichier consumer.py s'il est sur le serveur et dans testing.html, il est géré dans la fonction socket.onmessage
+
+# tâche effectuée
+
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+
+<head>
+    {% load static %}
+    {% include 'assets.html' %}
+</head>
+
+<body class="nk-body bg-white npc-default has-aside ">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap ">
+                {% include 'header.html' %}
+                <div class="nk-content">
+                    <div class="container wide-xl">
+                        <div class="nk-content-inner">
+                            {% include 'menu.html' %}
+                            <div class="nk-content-body">
+                                <div class="nk-content-wrap">
+                                    <div class="nk-block-head nk-block-head-sm">
+                                        <div class="nk-block-between">
+                                            <div class="nk-block-head-content">
+                                                <h2 class="">What is teachify ?</h2>
+                                                <h5><p>
+                                                    Teachify is a web-based tool that makes creating machine learning models fast, easy, and accessible to everyone. 
+                                                </p></h5>
+                                                <br>
+                                                <br>
+                                                <h2 class="">How do I use it ?</h2>
+                                                <br>
+                                                <h3>1.Gather</h3>
+                                                <h5><p>
+                                                    Start by gathering the samples of the classes you want the model to learn, for this you can use your camera or you can simply upload the images from your computer.
+                                                </p></h5>
+                                                <br><br>
+                                                <h3>2.Train</h3>
+                                                <h5><p>
+                                                    Train your model instantly using the gathered samples with a click of a button
+                                                </p></h5>
+                                                <br><br>
+                                                <h3>3.Export</h3>
+                                                <h5><p>
+                                                    Once the training is done the model will be ready to be exported, you can download it and implement it in any other project
+                                                </p></h5>
+                                                <div class="nk-block-des text-soft">
+                                                  
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                {% include 'footer.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        {% include 'login.html' %}
+
+
+    </div>
+
+</body>
+
+</html>

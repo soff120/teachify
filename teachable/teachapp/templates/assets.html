@@ -1,0 +1,164 @@
+{% load static %}
+<meta charset="utf-8">
+<meta name="author" content="Softnio">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description"
+    content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
+<link rel="shortcut icon" href="{% static 'images/favicon2.png' %}">
+<title>{{ Title }}Teachify</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'assets/css/dashlite.css' %}">
+<link id="skin-default" rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+<script src="{% static 'assets/js/bundle.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+
+<style>
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #4e60e7b6;
+    }
+
+    .preview-on-input {
+        max-height: 200px;
+        overflow-y: scroll;
+    }
+
+    .preview-on-input img {
+        width: 100%
+    }
+
+    #preview-temp-upload {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .loading {
+        color: black !important;
+    }
+
+    .inner-prediction {
+        width: 0px;
+        -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+        -webkit-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+        -moz-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+        -o-transition: width 1s ease-in-out, left 1.5s ease-in-out;
+        transition: width 1s ease-in-out, left 1.5s ease-in-out;
+    }
+
+    .score {
+
+        position: absolute;
+        right: 25px;
+        bottom: 5px;
+        color: revert;
+        font-weight: bolder;
+
+    }
+
+    .delete-class {
+        color: white;
+        padding: 5px;
+        background: black;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+    }
+</style>
+
+<script>
+    $.fn.center = function () {
+        this.css("position", "absolute");
+        this.css("top", ($(window).height() - this.height()) / 2 + $(window).scrollTop() + "px");
+        this.css("left", ($(window).width() - this.width()) / 2 + $(window).scrollLeft() + "px");
+        return this;
+    }
+</script>
+<script src="{% static 'assets/js/BlockUI.js' %}"></script>
+<script>
+    function blockUI() {
+        $.blockUI({
+            css: {
+                backgroundColor: 'transparent',
+                border: 'none'
+            },
+            message: '<div class="loading"><i style="font-size: 55px;" class="fas fa-spinner fa-spin"></i></div>',
+            baseZ: 1500,
+            overlayCSS: {
+                backgroundColor: '#FFFFFF',
+                opacity: 0.8,
+                cursor: 'wait'
+            }
+        });
+        $('.blockUI.blockMsg').center();
+    }
+
+    function blockLogkUI() {
+        $.blockUI({
+            css: {
+                backgroundColor: 'transparent',
+                border: 'none'
+            },
+            message: '<div class="loading" id="log-place" style="font-weight:600;font-size: 25px;"><i class="fas fa-spinner fa-spin"></i></div>',
+            baseZ: 1500,
+            overlayCSS: {
+                backgroundColor: '#FFFFFF',
+                opacity: 0.8,
+                cursor: 'wait'
+            }
+        });
+        $('.blockUI.blockMsg').center();
+    }
+
+    function blockEl(target) {
+        $(target).blockUI({
+            css: {
+                backgroundColor: 'transparent',
+                border: 'none'
+            },
+            message: '<div class="loading"></div>',
+            baseZ: 1500,
+            overlayCSS: {
+                backgroundColor: '#FFFFFF',
+                opacity: 0.6,
+                cursor: 'wait'
+            }
+        });
+        $('.blockUI.blockMsg').center();
+    }
+
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    window.csrftoken = getCookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+</script>

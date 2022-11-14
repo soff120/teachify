@@ -1,0 +1,40 @@
+{% load static %}
+<div class="nk-aside" data-content="sideNav" data-toggle-overlay="true" data-toggle-screen="lg" data-toggle-body="true">
+    <div class="nk-sidebar-menu" data-simplebar>
+        <ul class="nk-menu">
+            <li class="nk-menu-heading">
+                <h3 class="overline-title text-primary-alt">Menu</h3>
+            </li><!-- .nk-menu-heading -->
+            <li class="nk-menu-item">
+                <a href="/mainapp" class="nk-menu-link">
+                    <span class="nk-menu-icon"><em class="fab fa-leanpub"></em></span>
+                    <span class="nk-menu-text">Teachify machine</span>
+                </a>
+                
+                {% if User == none %}
+                    <a data-toggle="modal" data-target=".modal-login" class="nk-menu-link">
+                        <span class="nk-menu-icon"><i class="fas fa-sign-in-alt"></i></span>
+                        <span class="nk-menu-text">Login</span>
+                    </a>
+                {% else %}
+                    <a href="/usermodels" class="nk-menu-link">
+                        <span class="nk-menu-icon"><i class="fas fa-cog"></i></span>
+                        <span class="nk-menu-text">Your machines</span>
+                    </a>
+                {% endif %}
+                    <a href="/about-us" class="nk-menu-link">
+                        <span class="nk-menu-icon"><i class="fas fa-home"></i></span>
+                        <span class="nk-menu-text">About Teachify</span>
+                    </a>
+                    <a href="/our-machine" class="nk-menu-link">
+                        <span class="nk-menu-icon"><i class="fas fa-info-circle"></i></span>
+                        <span class="nk-menu-text">FAQ</span>
+                    </a>
+            </li><!-- .nk-menu-item -->
+          
+        </ul><!-- .nk-menu -->
+    </div><!-- .nk-sidebar-menu -->
+    <div class="nk-aside-close">
+        <a href="#" class="toggle" data-target="sideNav"><em class="icon ni ni-cross"></em></a>
+    </div><!-- .nk-aside-close -->
+</div><!-- .nk-aside -->
